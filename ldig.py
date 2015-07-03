@@ -28,25 +28,25 @@ class ldig(object):
                 self.__dict__['_features']=self.load_features()
                 return self.__dict__['_features']
             except IOError:
-                raise ("no feature file: %s"%self.featuresFile)
+                raise IOError("no feature file: %s"%self.featuresFile)
         elif name == 'labels':
             try:
                 self.__dict__['_labels']=self.load_labels()
                 return self.__dict__['_labels']
             except IOError:
-                raise ("no label file: %s"%self.labelsFile)
+                raise IOError("no label file: %s"%self.labelsFile)
         elif name == 'param':
             try:
                 self.__dict__['_param']=numpy.load(self.paramFile)
                 return self.__dict__['_param']
             except IOError:
-                raise ("no params file: %s"%self.paramFile)
+                raise IOError("no params file: %s"%self.paramFile)
         elif name == 'trie':
             try:
                 self.__dict__['_trie']=self.load_da()
                 return self.__dict__['_trie']
             except IOError:
-                raise ("no double array file: %s"%self.doublearrayFile)
+                raise IOError("no double array file: %s"%self.doublearrayFile)
 
 
 
